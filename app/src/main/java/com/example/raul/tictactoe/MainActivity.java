@@ -99,8 +99,9 @@ public class MainActivity extends AppCompatActivity {
             }
             turnSwitch(img);
             turn = !turn;
+            values[curIndex] = curDraw;
         }
-        values[curIndex] = curDraw;
+
         Log.i("turn?",  (turn) ? "yes tuen" : "no turn");
         Log.i("lastTag", current);
         Log.i("curDraw", Integer.toString(curDraw));
@@ -126,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
         img20.setImageResource(android.R.color.transparent);
         img21.setImageResource(android.R.color.transparent);
         img22.setImageResource(android.R.color.transparent);
-
     }
 
     public boolean endGame() {
@@ -172,6 +172,6 @@ public class MainActivity extends AppCompatActivity {
         img20 = (ImageButton) findViewById(R.id.imageButton20);
         img21 = (ImageButton) findViewById(R.id.imageButton21);
         img22 = (ImageButton) findViewById(R.id.imageButton22);
-        TextView status = (TextView) findViewById(R.id.Title);
+        status = (TextView) findViewById(R.id.Title);
     }
 }
