@@ -13,21 +13,22 @@
         android:id="@+id/ticTacBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:background="@color/bluish"
         android:columnCount="3"
-        android:rowCount="3"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:rowCount="3">
 
         <ImageButton
             android:id="@+id/imageButton00"
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="0"
+            android:layout_margin="2dp"
             android:layout_row="0"
             android:nestedScrollingEnabled="false"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="0" />
 
@@ -36,8 +37,11 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="1"
+            android:layout_margin="2dp"
             android:layout_row="0"
+            android:foregroundTint="@color/grayish"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="1" />
 
@@ -46,8 +50,11 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="2"
+            android:layout_margin="2dp"
             android:layout_row="0"
+            android:background="@color/grayish"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="2" />
 
@@ -56,9 +63,11 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="0"
+            android:layout_margin="2dp"
             android:layout_row="1"
             android:nestedScrollingEnabled="false"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="3" />
 
@@ -67,8 +76,10 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="1"
+            android:layout_margin="2dp"
             android:layout_row="1"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="4" />
 
@@ -77,8 +88,11 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="2"
+            android:layout_margin="2dp"
             android:layout_row="1"
+            android:background="@color/grayish"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="5" />
 
@@ -87,9 +101,11 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="0"
+            android:layout_margin="2dp"
             android:layout_row="2"
             android:nestedScrollingEnabled="false"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="6" />
 
@@ -98,8 +114,10 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="1"
+            android:layout_margin="2dp"
             android:layout_row="2"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="7" />
 
@@ -108,8 +126,10 @@
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
             android:layout_column="2"
+            android:layout_margin="2dp"
             android:layout_row="2"
             android:onClick="imgPress"
+            android:padding="5dp"
             android:scaleType="fitXY"
             android:tag="8"
             android:visibility="visible" />
@@ -119,13 +139,11 @@
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:text="@string/Title"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:visibility="invisible"
-        android:layout_above="@+id/resetButton"
-        android:layout_alignRight="@+id/resetButton"
-        android:layout_alignEnd="@+id/resetButton"
-        android:layout_marginBottom="58dp" />
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/imageButtonChoose"
@@ -144,13 +162,9 @@
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/resetButton"
+        android:layout_below="@+id/ticTacBoard"
+        android:layout_centerHorizontal="true"
         android:onClick="resetGame"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="78dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="60dp" />
+        android:text="@string/resetButton" />
 
 </RelativeLayout>
