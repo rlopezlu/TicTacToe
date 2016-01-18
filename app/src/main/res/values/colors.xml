@@ -3,6 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="turn1">#2980b9</color>
-    <color name="turn2">#9b59b6</color>
+    <color name="bluish">#2980b9</color>
+    <color name="pinkish">#9b59b6</color>
 </resources>

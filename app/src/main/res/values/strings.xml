@@ -2,5 +2,5 @@
     <string name="app_name">TicTacToe</string>
     <string name="Title">Tic Tac Toe</string>
     <string name="switchTap">Auto Switch After Turn</string>
-    <string name="resetButton">Reset Game?</string>
+    <string name="resetButton">New Game?</string>
 </resources>

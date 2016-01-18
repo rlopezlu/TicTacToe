@@ -10,139 +10,144 @@
     tools:context="com.example.raul.tictactoe.MainActivity">
 
     <GridLayout
+        android:id="@+id/ticTacBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/bluish"
         android:columnCount="3"
         android:rowCount="3"
-        android:background="@color/turn1"
-        android:id="@+id/ticTacBoard"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="30dp">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageButton
-            android:layout_width="@dimen/imgBut"
-            android:layout_height="@dimen/imgBut"
             android:id="@+id/imageButton00"
-            android:tag="0"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:scaleType="fitXY"
-            android:onClick="imgPress"
-            android:nestedScrollingEnabled="false" />
-
-        <ImageButton
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
-            android:tag="1"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:nestedScrollingEnabled="false"
             android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="0" />
+
+        <ImageButton
             android:id="@+id/imageButton01"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:scaleType="fitXY" />
-
-        <ImageButton
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
-            android:tag="2"
+            android:layout_column="1"
+            android:layout_row="0"
             android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="1" />
+
+        <ImageButton
             android:id="@+id/imageButton02"
-            android:layout_row="0"
-            android:scaleType="fitXY"
-            android:layout_column="2" />
-        <ImageButton
             android:layout_width="@dimen/imgBut"
             android:layout_height="@dimen/imgBut"
-            android:id="@+id/imageButton10"
-            android:tag="3"
-            android:onClick="imgPress"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:scaleType="fitXY"
-            android:nestedScrollingEnabled="false" />
-
-        <ImageButton
-            android:layout_width="@dimen/imgBut"
-            android:layout_height="@dimen/imgBut"
-            android:id="@+id/imageButton11"
-            android:tag="4"
-            android:onClick="imgPress"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:scaleType="fitXY" />
-
-        <ImageButton
-            android:layout_width="@dimen/imgBut"
-            android:layout_height="@dimen/imgBut"
-            android:tag="5"
-            android:onClick="imgPress"
-            android:id="@+id/imageButton12"
-            android:layout_row="1"
-            android:scaleType="fitXY"
-            android:layout_column="2" />
-        <ImageButton
-            android:layout_width="@dimen/imgBut"
-            android:layout_height="@dimen/imgBut"
-            android:id="@+id/imageButton20"
-            android:layout_row="2"
-            android:tag="6"
-            android:onClick="imgPress"
-            android:layout_column="0"
-            android:scaleType="fitXY"
-            android:nestedScrollingEnabled="false" />
-
-        <ImageButton
-            android:layout_width="@dimen/imgBut"
-            android:layout_height="@dimen/imgBut"
-            android:id="@+id/imageButton21"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:tag="7"
-            android:onClick="imgPress"
-            android:scaleType="fitXY" />
-
-        <ImageButton
-            android:layout_width="@dimen/imgBut"
-            android:layout_height="@dimen/imgBut"
-            android:id="@+id/imageButton22"
-            android:layout_row="2"
-            android:tag="8"
-            android:onClick="imgPress"
-            android:scaleType="fitXY"
             android:layout_column="2"
+            android:layout_row="0"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="2" />
+
+        <ImageButton
+            android:id="@+id/imageButton10"
+            android:layout_width="@dimen/imgBut"
+            android:layout_height="@dimen/imgBut"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:nestedScrollingEnabled="false"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="3" />
+
+        <ImageButton
+            android:id="@+id/imageButton11"
+            android:layout_width="@dimen/imgBut"
+            android:layout_height="@dimen/imgBut"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="4" />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:layout_width="@dimen/imgBut"
+            android:layout_height="@dimen/imgBut"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="5" />
+
+        <ImageButton
+            android:id="@+id/imageButton20"
+            android:layout_width="@dimen/imgBut"
+            android:layout_height="@dimen/imgBut"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:nestedScrollingEnabled="false"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="6" />
+
+        <ImageButton
+            android:id="@+id/imageButton21"
+            android:layout_width="@dimen/imgBut"
+            android:layout_height="@dimen/imgBut"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="7" />
+
+        <ImageButton
+            android:id="@+id/imageButton22"
+            android:layout_width="@dimen/imgBut"
+            android:layout_height="@dimen/imgBut"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:onClick="imgPress"
+            android:scaleType="fitXY"
+            android:tag="8"
             android:visibility="visible" />
     </GridLayout>
 
     <TextView
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/Title"
-        android:id="@+id/Title"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="invisible"
+        android:layout_above="@+id/resetButton"
+        android:layout_alignRight="@+id/resetButton"
+        android:layout_alignEnd="@+id/resetButton"
+        android:layout_marginBottom="58dp" />
 
     <ImageView
+        android:id="@+id/imageButtonChoose"
         android:layout_width="@dimen/imgBut"
         android:layout_height="@dimen/imgBut"
-        android:id="@+id/imageButtonChoose"
-        android:src="@drawable/circle"
-        android:background="@color/turn1"
-        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/ticTacBoard"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/ticTacBoard"
         android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
+        android:layout_marginStart="42dp"
+        android:background="@color/bluish"
+        android:src="@drawable/circle"
+        android:visibility="gone" />
 
     <Button
+        android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/resetButton"
-        android:id="@+id/resetButton"
+        android:onClick="resetGame"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/ticTacBoard"
-        android:layout_alignEnd="@+id/ticTacBoard"
-        android:layout_marginBottom="28dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
