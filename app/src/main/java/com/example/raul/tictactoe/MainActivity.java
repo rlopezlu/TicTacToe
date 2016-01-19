@@ -43,11 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Log.i("counter", Integer.toString(turnCount));
-        if (turnCount == 9) {
-            game = state.draw;
-            status.setText("Draw");
-            status.setVisibility(View.VISIBLE);
-        }
+
     }
 
     public void imgPress(View img) {
@@ -98,11 +94,20 @@ public class MainActivity extends AppCompatActivity {
             turnSwitch(img);
 
             values[curIndex] = curDraw;
+
+
             if (turn) {
                 status.setText("circle wins");
             } else {
                 status.setText("x wins");
             }
+
+            if (turnCount == 9 && game != state.play) {
+                game = state.draw;
+                status.setText("Draw");
+                status.setVisibility(View.VISIBLE);
+            }
+
             turnCount++;
             turnSwitch(img);
             turn = !turn;
@@ -193,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         if (checkThree(values[2], values[4], values[6])) {
             img02.setBackgroundColor(Color.CYAN);
             img11.setBackgroundColor(Color.CYAN);
-            img21.setBackgroundColor(Color.CYAN);
+            img20.setBackgroundColor(Color.CYAN);
             return (state.diagRL);
         }
 
