@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
             curDraw = R.drawable.cross;
             ticTac.setBackgroundColor(getResources().getColor(R.color.bluish));
         }
-
-
         Log.i("counter", Integer.toString(turnCount));
+        turn = !turn;
+        turnCount++;
 
     }
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         int position = Character.getNumericValue(Id.charAt(Id.length() - 1 ));//convert it to integer
         Log.i("testing functions lol", Integer.toString(position));
 */
-        if (endGame() != state.play) {
+        if (gameState() == state.win) {
             status.setVisibility(View.VISIBLE);
             return;
         }
@@ -91,41 +91,40 @@ public class MainActivity extends AppCompatActivity {
                     img22.setImageResource(curDraw);
                     break;
             }
-            turnSwitch(img);
 
             values[curIndex] = curDraw;
-
 
             if (turn) {
                 status.setText("circle wins");
             } else {
                 status.setText("x wins");
             }
-
-            if (turnCount == 9 && game != state.play) {
-                game = state.draw;
+            // if someone won
+            if (gameState() == state.win) {
+                status.setVisibility(View.VISIBLE);
+                return;
+            }
+            //
+            if(game != state.win && turnCount == 8){
                 status.setText("Draw");
+                game = state.draw;
                 status.setVisibility(View.VISIBLE);
             }
 
-            turnCount++;
             turnSwitch(img);
-            turn = !turn;
+            Log.i("turn?", (turn) ? "x turn" : "circle turn");
+            //Log.i("lastTag", current);
         }
 
-        Log.i("turn?", (turn) ? "x turn" : "circle turn");
-        Log.i("lastTag", current);
-        Log.i("curDraw", Integer.toString(curDraw));
 
+//        Log.i("curDraw", Integer.toString(curDraw));
 
-        if (endGame() != state.play) {
-            status.setVisibility(View.VISIBLE);
-        }
     }// end of function
 
     public void resetGame(View view) {
         Arrays.fill(values, 0);
         turnCount = 0;
+        game = state.play;
         status.setVisibility(View.INVISIBLE);
 
         img00.setImageResource(android.R.color.transparent);
@@ -150,58 +149,57 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public state endGame() {
+    public state gameState() {
         if (checkThree(values[0], values[1], values[2])) {
             img00.setBackgroundColor(Color.CYAN);
             img01.setBackgroundColor(Color.CYAN);
             img02.setBackgroundColor(Color.CYAN);
-            return (state.row0);
+            return (state.win);
         }
         if (checkThree(values[3], values[4], values[5])) {
             img10.setBackgroundColor(Color.CYAN);
             img11.setBackgroundColor(Color.CYAN);
             img12.setBackgroundColor(Color.CYAN);
-            return (state.row1);
+            return (state.win);
         }
         if (checkThree(values[6], values[7], values[8])) {
             img20.setBackgroundColor(Color.CYAN);
             img21.setBackgroundColor(Color.CYAN);
             img22.setBackgroundColor(Color.CYAN);
-            return (state.row2);
+            return (state.win);
         }
 
         if (checkThree(values[0], values[3], values[6])) {
             img00.setBackgroundColor(Color.CYAN);
             img10.setBackgroundColor(Color.CYAN);
             img20.setBackgroundColor(Color.CYAN);
-            return (state.col0);
+            return (state.win);
         }
         if (checkThree(values[1], values[4], values[7])) {
             img01.setBackgroundColor(Color.CYAN);
             img11.setBackgroundColor(Color.CYAN);
             img21.setBackgroundColor(Color.CYAN);
-            return (state.col1);
+            return (state.win);
         }
         if (checkThree(values[2], values[5], values[8])) {
             img20.setBackgroundColor(Color.CYAN);
             img21.setBackgroundColor(Color.CYAN);
             img22.setBackgroundColor(Color.CYAN);
-            return (state.col2);
+            return (state.win);
         }
 
         if (checkThree(values[0], values[4], values[8])) {
             img00.setBackgroundColor(Color.CYAN);
             img11.setBackgroundColor(Color.CYAN);
             img22.setBackgroundColor(Color.CYAN);
-            return (state.diagLR);
+            return (state.win);
         }
         if (checkThree(values[2], values[4], values[6])) {
             img02.setBackgroundColor(Color.CYAN);
             img11.setBackgroundColor(Color.CYAN);
             img20.setBackgroundColor(Color.CYAN);
-            return (state.diagRL);
+            return (state.win);
         }
-
         return state.play;
     }
 
@@ -230,9 +228,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     enum state {
-        draw, play,
-        row0, row1, row2,
-        col0, col1, col2,
-        diagLR, diagRL
+        draw, play, win
     }
 }
