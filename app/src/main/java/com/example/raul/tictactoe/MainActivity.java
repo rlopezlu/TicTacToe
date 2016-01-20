@@ -182,8 +182,8 @@ public class MainActivity extends AppCompatActivity {
             return (state.win);
         }
         if (checkThree(values[2], values[5], values[8])) {
-            img20.setBackgroundColor(Color.CYAN);
-            img21.setBackgroundColor(Color.CYAN);
+            img02.setBackgroundColor(Color.CYAN);
+            img12.setBackgroundColor(Color.CYAN);
             img22.setBackgroundColor(Color.CYAN);
             return (state.win);
         }
