@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
             values[curIndex] = curDraw;
 
             if (turn) {
-                status.setText("circle wins");
+                status.setText("O won");
             } else {
-                status.setText("x wins");
+                status.setText("x won");
             }
             // if someone won
             if (gameState() == state.win) {
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             }
             //
             if(game != state.win && turnCount == 8){
-                status.setText("Draw");
+                status.setText("Tie");
                 game = state.draw;
                 status.setVisibility(View.VISIBLE);
             }
